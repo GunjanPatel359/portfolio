@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,23 +14,50 @@ html {
 }
 
 @layer base {
+  /* Default Light Theme */
   :root {
     --color-foreground: #2E2E2E;
     --color-background: #F9F9F9;
   }
 }
+  /* Default Dark Theme */
+  .dark {
+    --color-foreground: #EAEAEA;
+    --color-background: #121212;
+  }
 
-.dark{
-  --color-foreground: #EAEAEA ;
-  --color-background: #121212 ;
-}
+  /* Light Blue Theme */
+  .light-blue {
+    --color-foreground: #0A192F;
+    --color-background: #E3F2FD;
+  }
 
-.light-blue{
-  --color-foreground: #0A192F  ;
-  --color-background: #F0F8FF  ;
-}
+  /* Dark Mode Variant of Light Blue */
+  .dark-blue {
+    --color-foreground: #AECBFA;
+    --color-background: #0A1B30;
+  }
 
-.dark-blue{
-  --color-foreground: #60A5FA ;
-  --color-background: #1E293B ;
-}
+  /* Light Warm Theme */
+  .light-warm {
+    --color-foreground: #D84315;
+    --color-background: #FFEBE0;
+  }
+
+  /* Dark Mode Variant of Warm */
+  .dark-warm {
+    --color-foreground: #FF7043;
+    --color-background: #3B1C1C;
+  }
+
+  /* Light Green Theme */
+  .light-green {
+    --color-foreground: #1B5E20;
+    --color-background: #E8F5E9;
+  }
+
+  /* Dark Mode Variant of Green */
+  .dark-green {
+    --color-foreground: #81C784;
+    --color-background: #103D18;
+  }

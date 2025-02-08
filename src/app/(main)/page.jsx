@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 const MainPage = () => {
     const { theme, setTheme } = useTheme()
-    const {color,setColor}=useTheme()
+    const { color, setColor } = useTheme()
     const [foregroundColor, setForegroundColor] = useState('');
     const [backgroundColor, setBackgroundColor] = useState('');
 
@@ -45,10 +45,10 @@ const MainPage = () => {
             </div> */}
 
             <div className="flex justify-between items-center p-6 text-colorfront top-0 w-full text-2xl">
-                <div className="logo text-2xl font-semibold">Portfolio</div>
+                <div className="logo text-2xl font-semibold inline">Portfolio</div>
                 <div>
                     <ul className="flex space-x-6 text-xl">
-                        <li>
+                        {/* <li>
                             <Link href="/about" className="text-colorfront hover:opacity-40 font-medium">
                                 About
                             </Link>
@@ -67,7 +67,7 @@ const MainPage = () => {
                             <Link href="/contact" className="text-colorfront hover:opacity-40 font-medium">
                                 Contact
                             </Link>
-                        </li>
+                        </li> */}
                         <li className="flex">
                             {theme === "dark" ? (
                                 <button className="text-xl" onClick={() => setTheme("light")}>
@@ -78,42 +78,23 @@ const MainPage = () => {
                                     <BsFillMoonStarsFill className="my-auto" fill={foregroundColor} size={22} />
                                 </button>
                             )}
-                            <button onClick={()=>setColor("blue")}>
-                                blue
+                            <button className="bg-gray-500 rounded-full w-7 h-7 ml-2 shadow-lg" onClick={() => setColor("")}>
+                            </button>
+                            <button className="bg-blue-500 rounded-full w-7 h-7 ml-2 shadow-lg" onClick={() => setColor("blue")}>
+                            </button>
+                            <button className="bg-orange-500 rounded-full w-7 h-7 ml-2 shadow-lg" onClick={() => setColor("warm")}>
+                            </button>
+                            <button className="bg-green-500 rounded-full w-7 h-7 ml-2 shadow-lg" onClick={() => setColor("green")}>
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            {/* TODO Moblie NavBar */}
-            {/* <div className="block md:hidden p-6 bg-gray-800 text-white fixed op-0 w-full z-10">
-                <div className="logo text-2xl font-semibold">Zakir Husain</div>
-                <div className="hamburger-menu flex items-center justify-between">
-                    <div className="hamburger-icon" onclick="toggleMenu()">
-                        <span className="block w-6 h-0.5 bg-white my-1"></span>
-                        <span className="block w-6 h-0.5 bg-white my-1"></span>
-                        <span className="block w-6 h-0.5 bg-white my-1"></span>
-                    </div>
-                    <div className="menu-links hidden flex-col space-y-4 mt-6">
-                        <li><a href="#about" className="text-white hover:text-gray-400" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#experience" className="text-white hover:text-gray-400" onclick="toggleMenu()">Experience</a></li>
-                        <li><a href="#projects" className="text-white hover:text-gray-400" onclick="toggleMenu()">Projects</a></li>
-                        <li><a href="#contact" className="text-white hover:text-gray-400" onclick="toggleMenu()">Contact</a></li>
-                        <li>
-                            <button id="theme-toggle-mobile" className="theme-toggle text-xl">
-                                <i className="fas fa-sun"></i>
-                                <i className="fas fa-moon"></i>
-                            </button>
-                        </li>
-                    </div>
-                </div>
-            </div> */}
-
             <div
-                className="py-24 px-6 bg-colorback text-center flex justify-evenly"
+                className="py-10 px-6 sm:py-24 bg-colorback text-center block sm:flex justify-evenly"
             >
-                <div className="mb-8 flex my-auto">
+                <div className="flex my-auto">
                     <img
                         src="/main-2.jpeg"
                         alt="Gunjan profile picture"
@@ -122,7 +103,7 @@ const MainPage = () => {
                         className="rounded mx-auto border border-colorfront"
                     />
                 </div>
-                <div className="flex flex-col justify-center text-colorfront">
+                <div className="flex flex-col justify-center text-colorfront mt-16 sm:mt-0">
                     <p className="text-xl font-medium">Hello, I'm</p>
                     <h1 className="text-4xl font-extrabold">Gunjan Patel</h1>
                     <p className="text-2xl font-extrabold">
@@ -131,7 +112,7 @@ const MainPage = () => {
                         Fullstack Developer
                     </p>
                     <div className="flex space-x-4 justify-center mt-6">
-                        <button className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700">
+                        <button className="border-2 border-blue-600 text-blue-600 py-2 px-4 rounded-full hover:shadow">
                             Download CV
                         </button>
                         <Link href="/contact">
@@ -161,88 +142,76 @@ const MainPage = () => {
                 </div>
             </div>
 
-            <div className="py-20 bg-colorback text-colorfront">
-                <p className="text-xl font-medium text-center">Get To Know More</p>
-                <h1 className="text-4xl font-extrabold text-center mb-8">About Me</h1>
-                <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 space-x-10">
-                    <div className="">
-                        <img
-                            src="additional.jpeg"
-                            alt="Profile picture"
-                            className="rounded-xl shadow-lg h-[400px]"
-                        />
-                    </div>
-                    <div className="space-y-6 max-w-[600px] text-center md:text-left">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="border border-colorfront p-5 rounded-2xl bg-colorback" style={{ filter: 'brightness(0.96)' }}>
-                                <BiSolidMedal size={35} className="mx-auto" />
-                                <h3 className="text-xl font-semibold text-center">
-                                    Experience
-                                </h3>
-                                <p className="text-sm text-center">
-                                    2+ years <br />
-                                    Fullstack Development
-                                </p>
-                            </div>
-                            <div className="border border-colorfront p-5 rounded-2xl bg-colorback" style={{ filter: 'brightness(0.96)' }}>
-                                <FaUserGraduate size={35} className="mx-auto" />
-                                <h3 className="text-xl font-semibold text-center">Education</h3>
-                                <p className="text-sm text-center">B.Tech. Bachelors Degree</p>
-                            </div>
-                        </div>
-                        <div className="text-container mt-6">
-                            <p className="text-lg text-justify">
-                                I have done my school graduation from Shri J M Chaudhary
-                                Sarvajanik Vidyalaya in 2020 with a Science. And currently
-                                pursuing B.Tech at Ganpat University. After school, I started
-                                working as a Computer Engineering student at Ganpat University.
-                                I have been studying there for 2.5 years. In my free time, I
-                                enjoy playing games, exploring, and watching movies. I am
-                                passionate about web development and interested about backend
-                                designs.
+            <section className="md:py-20 py-10 bg-colorback text-colorfront" id="about">
+                <div className="container mx-auto px-6 md:px-12 lg:px-20">
+                    <p className="text-xl font-medium text-center">Get To Know More</p>
+                    <h1 className="text-4xl font-extrabold text-center mb-12">About Me</h1>
+
+                    <div className="flex flex-col lg:flex-row items-center gap-12">
+                        <div className="md:max-w-2xl xl:max-w-2xl lg:max-w-md  sm:max-w-xl text-center">
+                            <p className="text-lg leading-relaxed text-justify">
+                                Hey there! 👋 I'm Gunjan, a passionate Fullstack Web Developer who loves crafting amazing digital experiences. 💻✨ Whether it's coding sleek websites, designing user-friendly interfaces, or solving complex problems, I'm always up for the challenge! 🚀 When I'm not working, you’ll find me exploring new tech, sipping on coffee ☕, or brainstorming my next big idea. Let's connect and create something awesome together! 🎨💡
                             </p>
                         </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 max-w-lg">
+                            <div className="border border-colorfront p-6 rounded-2xl bg-colorback shadow-lg text-center" style={{ filter: 'brightness(0.96)' }}>
+                                <BiSolidMedal size={40} className="mx-auto mb-2" />
+                                <h3 className="text-xl font-semibold">Experience</h3>
+                                <p className="text-sm">2+ years <br /> Fullstack Development</p>
+                            </div>
+                            <div className="border border-colorfront p-6 rounded-2xl bg-colorback shadow-lg text-center" style={{ filter: 'brightness(0.96)' }}>
+                                <FaUserGraduate size={40} className="mx-auto mb-2" />
+                                <h3 className="text-xl font-semibold">Education</h3>
+                                <p className="text-sm">B.Tech. Bachelor's Degree</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-12 max-w-4xl lg:max-w-6xl mx-auto text-center lg:text-left">
+                        <p className="text-lg leading-relaxed text-justify">
+                            I completed my schooling at Shri J M Chaudhary Sarvajanik Vidyalaya in 2020 with a Science background. Currently, I am pursuing a B.Tech at Ganpat University. As a Computer Engineering student, I have been immersed in my field for 2.5 years. In my free time, I enjoy playing games, exploring new places, and watching movies. My passion lies in web development, with a strong interest in backend designs and system architecture.
+                        </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div className="pt-10 text-colorfront">
                 <p className="text-center font-semibold">Explore My</p>
                 <h1 className="text-5xl text-center font-bold">Experience</h1>
                 <div className="flex flex-col justify-center">
-                    <div className="gap-8 mb-8 mt-8 grid md:grid-cols-2 mx-8">
+                    <div className="gap-8 mb-8 mt-8 grid lg:grid-cols-2 md:grid-cols-1 lg:mx-32 md:mx-36 sm:mx-20 mx-16">
                         <div
-                            className="details-container p-10 py-9 flex-1 bg-colorback text-colorfront rounded-2xl border border-colorfront text-center"
+                            className="details-container lg:px-10 sm:px-3 py-10 flex-1 bg-colorback text-colorfront rounded-2xl border border-colorfront text-center"
                             style={{ filter: "brightness(0.95)" }}
                         >
                             <h2 className="text-colorfront font-semibold text-2xl mb-6">
                                 Frontend Development
                             </h2>
-                            <div className="grid grid-cols-2 gap-[2.5rem] justify-around">
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                            <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-[2.5rem] gap-[1rem] justify-around sm:px-0 px-5">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">HTML</h3>
                                         <p className="text-left ml-4">Experienced</p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">CSS</h3>
                                         <p className="text-left ml-4">Experienced</p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">React.js</h3>
                                         <p className="text-left ml-4">Intermediate</p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">JavaScript</h3>
                                         <p className="text-left ml-4">Advance</p>
                                     </div>
@@ -251,37 +220,37 @@ const MainPage = () => {
                         </div>
 
                         <div
-                            className="details-container p-10 flex-1 bg-colorback text-colorfront rounded-2xl border border-colorfront text-center"
+                            className="details-container lg:px-10 sm:px-1 py-10 flex-1 bg-colorback text-colorfront rounded-2xl border border-colorfront text-center"
                             style={{ filter: "brightness(0.95)" }}
                         >
                             <h2 className="text-colorfront font-semibold text-2xl mb-6">
                                 Backend Development
                             </h2>
-                            <div className="grid grid-cols-2 gap-[2.5rem] justify-around">
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                            <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-[2.5rem] gap-[1rem] justify-around sm:px-0 px-5">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">PostgreSQL</h3>
                                         <p className="text-left ml-4">Basic</p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">Node JS</h3>
                                         <p className="text-left ml-4">Intermediate</p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">MongoDB</h3>
                                         <p className="text-left ml-4">Intermediate</p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-0.5 items-center justify-around">
+                                <div className="grid sm:grid-cols-4 grid-cols-3 gap-0.5 items-center justify-around">
                                     <BsFillCheckCircleFill size={28} className="mx-auto" />
-                                    <div className="col-span-3">
+                                    <div className="sm:col-span-3 col-span-2">
                                         <h3 className="font-bold text-xl text-left ml-4">Git</h3>
                                         <p className="text-left ml-4">Intermediate</p>
                                     </div>
