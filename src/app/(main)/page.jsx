@@ -48,26 +48,6 @@ const MainPage = () => {
                 <div className="logo text-2xl font-semibold inline">Portfolio</div>
                 <div>
                     <ul className="flex space-x-6 text-xl">
-                        {/* <li>
-                            <Link href="/about" className="text-colorfront hover:opacity-40 font-medium">
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/experience" className="text-colorfront hover:opacity-40 font-medium">
-                                Experience
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/projects" className="text-colorfront hover:opacity-40 font-medium">
-                                Projects
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/contact" className="text-colorfront hover:opacity-40 font-medium">
-                                Contact
-                            </Link>
-                        </li> */}
                         <li className="flex">
                             {theme === "dark" ? (
                                 <button className="text-xl" onClick={() => setTheme("light")}>
@@ -261,83 +241,83 @@ const MainPage = () => {
                 </div>
             </div>
 
-            {/* <div>
-                <div id="loading-page">
-                    <canvas id="loading-background"></canvas>
-                    <div className="loading-content">
-                        <h1>Welcome to my Portfolio</h1>
+            <section className="py-20 bg-colorback text-colorfront" id="projects">
+                <div className="container mx-auto px-6 md:px-12 lg:px-20">
+                    <h1 className="text-4xl font-extrabold text-center mb-12">Projects</h1>
+
+                    {/* Taste Project */}
+                    <div className="mb-16 border border-colorfront rounded-2xl p-6 shadow-lg bg-colorback">
+                        <h2 className="text-2xl font-bold mb-3">Taste – Restaurant Management Web App</h2>
+                        <p className="mb-4 text-justify">
+                            A comprehensive system for managing restaurant operations including dine-in, online orders, and role-based control. Features real-time order tracking, PayPal integration, and performance improvements via migration from MERN to Next.js.
+                        </p>
+                        <p className="mb-4 italic text-sm">Tech Stack: Next.js, Node.js, MongoDB, WebSockets, Tailwind CSS, PayPal</p>
+                        <div className="aspect-video mb-4">
+                            <iframe
+                                src="https://restaurant-webapp-rho.vercel.app/"
+                                title="Taste Project Preview"
+                                className="w-full h-full rounded-md border bg-white"
+                            ></iframe>
+                        </div>
+                        <div className="flex gap-4">
+                            <a href="https://restaurant-webapp-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Live Demo</a>
+                            <a href="https://github.com/GunjanPatel359/restaurant-webapp" target="_blank" rel="noopener noreferrer" className="text-gray-400 underline">GitHub</a>
+                        </div>
                     </div>
-                    <div id="progress-counter">1%</div>
+
+                    {/* Chatverse Project (no iframe) */}
+                    <div className="mb-16 border border-colorfront rounded-2xl p-6 shadow-lg bg-colorback">
+                        <h2 className="text-2xl font-bold mb-3">Chatverse – Real-time Chat Application</h2>
+                        <p className="mb-4 text-justify">
+                            In-progress app designed for real-time communication within organizations. Supports structured permissions, voice/video calls, screen sharing, and uses serverless functions for scalable backend operations.
+                        </p>
+                        <p className="mb-4 italic text-sm">Tech Stack: Next.js, Prisma, Clerk, LiveKit, Socket.io, MongoDB, Tailwind CSS</p>
+                        <img
+                            src="/chatverse-preview.jpg"
+                            alt="Chatverse Project Screenshot"
+                            className="rounded-md border mb-4 w-full object-cover aspect-video"
+                        />
+                        <div className="flex gap-4">
+                            <a href="https://chatapp-delta-sandy.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Live Demo</a>
+                            <a href="https://github.com/GunjanPatel359/chatapp" target="_blank" rel="noopener noreferrer" className="text-gray-400 underline">GitHub</a>
+                        </div>
+                    </div>
+
+                    {/* Discord Clone Project (no iframe) */}
+                    <div className="mb-16 border border-colorfront rounded-2xl p-6 shadow-lg bg-colorback">
+                        <h2 className="text-2xl font-bold mb-3">Discord Clone</h2>
+                        <p className="mb-4 text-justify">
+                            A full-stack real-time chat application inspired by Discord. Built using modern technologies to support servers, channels, messages, and voice features. Focused on backend structure and user role management.
+                        </p>
+                        <p className="mb-4 italic text-sm">Tech Stack: Next.js, Tailwind CSS, Clerk, MongoDB, Socket.io, shadcn UI</p>
+                        <img
+                            src="/discord-preview.jpg"
+                            alt="Discord Clone Screenshot"
+                            className="rounded-md border mb-4 w-full object-cover "
+                        />
+                        <div className="flex gap-4">
+                            <a href="https://chat-dis-six-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Live Demo</a>
+                            <a href="https://github.com/GunjanPatel359/discord-clone" target="_blank" rel="noopener noreferrer" className="text-gray-400 underline">GitHub</a>
+                        </div>
+                    </div>
+
+
+
+                    {/* Copied Projects List */}
+                    <div className="mb-12 text-center">
+                        <h2 className="text-2xl font-bold mb-3">Other Projects</h2>
+                        <ul className="list-disc list-inside">
+                            <li>Lingo – Language learning platform like Duolingo</li>
+                            <li>E-Vendor – E-commerce site</li>
+                            <li>More on <a className="text-blue-500 underline" href="https://github.com/GunjanPatel359" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
                 </div>
+            </section>
 
-                <section id="projects">
-                    <p className="section__text__p1">Browse My Recent</p>
-                    <h1 className="title">Under testing</h1>
-                    <div className="experience-details-container">
-                        <div className="about-containers">
-                            <div className="details-container color-container">
-                                <div className="article-container">
-                                    <img src="project-1.png" alt="Project 1" className="project-img" />
-                                </div>
-                                <h2 className="experience-sub-title project-title">Saas app</h2>
-                                <div className="btn-container">
-                                    <button className="btn btn-color-2 project-btn" onclick="location.href='https://github.com/zakir19/saas-app/tree/main'">
-                                        Github
-                                    </button>
 
-                                    <button className="btn btn-color-2 project-btn" onclick="location.href='https://saas-app-zak-exp.vercel.app'">
-                                        Live Demo
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="details-container color-container">
-                                <div className="article-container">
-                                    <img src="project-2.jpg" alt="Project 2" className="project-img" />
-                                </div>
-                                <h2 className="experience-sub-title project-title">coffe Frontend</h2>
-                                <div className="btn-container">
-                                    <button className="btn btn-color-2 project-btn" onclick="location.href='https://github.com/zakir19/coffewebsite'">
-                                        Github
-                                    </button>
-                                    <button className="btn btn-color-2 project-btn" onclick="location.href='https://coffewebsite-zak.vercel.app/'">
-                                        Live Demo
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="details-container color-container">
-                                <div className="article-container">
-                                    <img src="project-3.png" alt="Project 3" className="project-img" />
-                                </div>
-                                <h2 className="experience-sub-title project-title">Project Three</h2>
-                                <div className="btn-container">
-                                    <button className="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Zakir19'">
-                                        Github
-                                    </button>
-                                    <button className="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Zakir19'">
-                                        Live Demo
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="arrow.png" alt="Arrow icon" className="icon arrow" onclick="location.href='./#contact'" />
-                </section>
-                <section id="contact">
-                    <p className="section__text__p1">Get in Touch</p>
-                    <h1 className="title">Contact Me</h1>
-                    <div className="contact-info-upper-container">
-                        <div className="contact-info-container">
-                            <img src="email.png" alt="Email icon" className="icon contact-icon email-icon" />
-                            <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
-                        </div>
-                        <div className="contact-info-container">
-                            <img src="linkedin.png" alt="LinkedIn icon" className="icon contact-icon" />
-                            <p><a href="'https://www.linkedin.com/in/patel-zakir-h-3b3019253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'">LinkedIn</a></p>
-                        </div>
-                    </div>
-                </section>
 
-            </div> */}
+
         </>
     );
 };
